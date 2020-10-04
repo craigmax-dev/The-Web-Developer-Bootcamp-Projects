@@ -1,0 +1,50 @@
+/*font-family: 'Raleway', sans-serif;
+font-family: 'Roboto Mono', monospace;
+*/
+/*font-family*/
+
+h1{
+  font-family: 'Roboto Mono', monospace;
+}
+
+p{
+  font-family: 'Raleway', sans-serif;
+}
+
+/*font-size*/
+body{
+  font-size: 10px;
+}
+
+h1{
+  font-size: 5.0em;
+}
+
+p{
+  font-size: 2.0em;
+}
+
+span{
+  font-size: 2.0em;
+}
+
+/*font-weight*/
+p{
+  font-weight: 100;
+}
+
+/*line-height*/
+p{
+  line-height: 1.5;
+}
+
+
+/*text-align*/
+h1{
+  text-align: center;
+}
+
+/*text-decoration*/
+h1{
+  text-decoration: underline;
+}

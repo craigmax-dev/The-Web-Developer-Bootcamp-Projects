@@ -1,0 +1,31 @@
+/* SCSS HEX 
+$blue-yonder: #586ba4ff;
+$dark-cornflower-blue: #324376ff;
+$buff: #f5dd90ff;
+$atomic-tangerine: #f68e5fff;
+$bittersweet: #f76c5eff;*/
+
+body {
+/*  background: url(http://www.beinspiredliving.com/wp-content/uploads/2015/07/Dollarphotoclub_49840798.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;*/
+  background: pink;
+}
+
+h1 {
+  color: #586ba4ff;
+  border-color: black;
+  border-width: 5px;
+  border-style: solid;
+}
+
+h2 {
+  /*color: #f76c5eff;*/
+  background: #f76c5eff;
+}
+
+li {
+  color: #f68e5fff;
+}
+
+
