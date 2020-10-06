@@ -1,4 +1,6 @@
-<% include("partials/header") %>
+<%- include("partials/header") %>
+
+<a href="/campgrounds/new">Add new campground</a>
 
 <h1>This is the campgrounds page</h1>
 
@@ -7,4 +9,4 @@
   <h4><%= campground.name %></h4>
   <img src="<%= campground.image %> " alt="" />
 </div>
-<% }) %> <% include("partials/footer") %>
+<% }) %> <%- include("partials/footer") %>
