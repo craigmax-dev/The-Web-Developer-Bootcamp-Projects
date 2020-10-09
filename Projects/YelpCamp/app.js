@@ -20,22 +20,22 @@ const campgroundSchema = new mongoose.Schema({
   description: String,
 });
 const Campground = mongoose.model("Campground", campgroundSchema);
-Campground.create(
-  {
-    name: "Fairy Pools",
-    image:
-      "https://www.visitscotland.com/cms-images/holidays/wild-camping-fairy-pools?view=Standard",
-    description:
-      "This campground is near the fairy pools in Skye, a collection of beautifully crystal clear blue pools on the River Brittle",
-  },
-  (err, campground) => {
-    if (err) {
-      console.log(err);
-    } else {
-      console.log(campground);
-    }
-  }
-);
+// Campground.create(
+//   {
+//     name: "Fairy Pools",
+//     image:
+//       "https://www.visitscotland.com/cms-images/holidays/wild-camping-fairy-pools?view=Standard",
+//     description:
+//       "This campground is near the fairy pools in Skye, a collection of beautifully crystal clear blue pools on the River Brittle",
+//   },
+//   (err, campground) => {
+//     if (err) {
+//       console.log(err);
+//     } else {
+//       console.log(campground);
+//     }
+//   }
+// );
 
 // const campgrounds = [
 //   {
@@ -66,7 +66,7 @@ app.get("/campgrounds", (req, res) => {
     if (err) {
       console.log(err);
     } else {
-      res.render("campgrounds", { campgrounds: allCampgrounds });
+      res.render("index", { campgrounds: allCampgrounds });
     }
   });
 });
@@ -75,7 +75,8 @@ app.get("/campgrounds", (req, res) => {
 app.post("/campgrounds", (req, res) => {
   const name = req.body.name;
   const image = req.body.image;
-  const newCampground = { name: name, image: image };
+  const description = req.body.description;
+  const newCampground = { name: name, image: image, description: description };
   // Create new campground and save to db
   Campground.create(newCampground, (err, newlyCreated) => {
     if (err) {
@@ -88,12 +89,18 @@ app.post("/campgrounds", (req, res) => {
 
 // NEW
 app.get("/campgrounds/new", (req, res) => {
-  res.render("new.ejs");
+  res.render("new");
 });
 
 // SHOW
 app.get("/campgrounds/:id", (req, res) => {
-  res.send("This will be the show page one day");
+  Campground.findById(req.params.id, (err, foundCampground) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render("show", { campground: foundCampground });
+    }
+  });
 });
 
 app.listen(3000, () => {
