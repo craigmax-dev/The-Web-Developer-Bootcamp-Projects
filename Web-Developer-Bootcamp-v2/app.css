@@ -1,0 +1,55 @@
+div {
+  width: 200px;
+  height: 200px;
+}
+
+#one {
+  border-width: 10px;
+  border-color: black;
+  border-style: solid;
+  box-sizing: border-box;
+}
+#two {
+  border-style: dashed;
+  border-left-color: blue;
+}
+#three {
+  border: 2px solid pink;
+  border-radius: 5px;
+}
+
+/* Padding */
+h1 {
+  padding-left: 30px;
+}
+
+/* Even padding all sides */
+button {
+  padding: 20px;
+}
+
+/* Padding top/bottom and left/right */
+button {
+  padding: 10px 20px;
+}
+
+/* Padding top right bottom left */
+button {
+  padding: 1px, 2px, 3px, 4px;
+}
+
+/* Margin */
+/* Even margin all sides */
+button {
+  margin: 20px;
+}
+
+/* margin top/bottom and left/right */
+button {
+  margin: 10px 20px;
+}
+
+/* margin top right bottom left */
+button {
+  margin: 1px, 2px, 3px, 4px;
+}

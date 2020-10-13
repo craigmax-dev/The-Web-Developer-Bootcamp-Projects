@@ -1,0 +1,53 @@
+/* Descendent selectors */
+.post a {
+  color: aqua;
+}
+
+footer a {
+  color: rebeccapurple;
+}
+
+/* Adjacent selector */
+input + button {
+  background-color: palegoldenrod;
+}
+
+/* Direct descendant selector */
+footer > a {
+  color: aquamarine;
+}
+
+/* Attribute selector */
+input[type="password"] {
+  color: greenyellow;
+}
+
+/* Pseudo classes */
+a:hover {
+  color: brown;
+}
+
+.post button:hover {
+  color: yellow;
+}
+
+button:active {
+  color: goldenrod;
+}
+
+.post:nth-of-type(3) {
+  color: red;
+}
+
+/* Pseudo-elements */
+p::first-letter {
+  font-size: 60px;
+}
+
+p::first-line {
+  color: beige;
+}
+
+p::selection {
+  background-color: cadetblue;
+}

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forms Demo</title>
+  </head>
+  <body>
+    <h1>Forms Demo</h1>
+    <form action="/search">
+      <button type="button">Don't submit the form!</button>
+      <p>
+        <label for="username">Enter your username</label>
+        <input
+          id="username"
+          type="text"
+          placeholder="username"
+          name="username"
+        />
+      </p>
+      <p>
+        <label for="password">Enter your password</label>
+        <input
+          id="password"
+          type="password"
+          placeholder="password"
+          name="password"
+        />
+      </p>
+      <p>
+        <label for="color">Enter your color</label>
+        <input id="color" type="color" name="color" />
+      </p>
+      <p>
+        <label for="number">Enter your number</label>
+        <input id="number" type="number" name="number" />
+      </p>
+      <button>Submit</button>
+    </form>
+    <!-- Button doesn't default to submit outside a form -->
+    <button>Does not submit</button>
+    <!-- Reddit search form -->
+    <form action="https://www.reddit.com/search/">
+      <label for="query"></label>
+      <input type="text" name="q" id="query" />
+      <button>Search Reddit</button>
+    </form>
+
+    <h2>More inputs</h2>
+    <form action="/birds">
+      <label for="agree">I agree to everything</label>
+      <input type="checkbox" name="agree_tos" id="agree" />
+
+      <p>
+        <label for="xs">XS</label>
+        <input type="radio" name="size" id="xs" value="xs" />
+        <label for="s">S</label>
+        <input type="radio" name="size" id="s" value="s" />
+        <label for="m">M</label>
+        <input type="radio" name="size" id="m" value="m" />
+      </p>
+      <p>
+        <label for="meal">Select an Entree</label>
+        <select name="meal" id="meal">
+          <option value="--">Please choose an option</option>
+          <option value="fish">Fish</option>
+          <option value="veg">Vegetarian</option>
+          <option value="steak">Steak</option>
+        </select>
+      </p>
+      <select name="" id=""></select>
+    </form>
+
+    <h2>Range and text area</h2>
+    <form action="/food">
+      <p>
+        <label for="cheese">Rate cheese</label>
+        <input type="range" id="cheese" name="cheese_rating" min="1" max="10" />
+      </p>
+      <p>
+        <label for="requests">Any special requests?</label>
+        <textarea name="requests" id="requests" cols="30" rows="10"> </textarea>
+      </p>
+    </form>
+
+    <h2>Coding exercise</h2>
+    <form action="/search">
+      <label for="username">Username</label>
+      <input type="text" name="username" id="username" placeholder="username" />
+      <label for="password">Password</label>
+      <input
+        type="password"
+        name="password"
+        id="password"
+        placeholder="password"
+      />
+      <button>Register</button>
+    </form>
+
+    <h2>HTML Form validations</h2>
+    <form action="/dummy">
+      <label for="first">Enter first name</label>
+      <input type="text" name="first" id="first" required />
+      <label for="username">Username</label>
+      <input
+        type="text"
+        name="username"
+        id="username"
+        required
+        minlength="5"
+        maxlength="20"
+      />
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email" required />
+      <label for="url">url</label>
+      <input type="url" name="url" id="url" required />
+      <button>Submit</button>
+    </form>
+  </body>
+</html>
