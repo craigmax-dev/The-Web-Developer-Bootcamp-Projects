@@ -52,4 +52,59 @@ exams.every((score) => score > 70);
 // some - boolean check if any array element pass conditional function
 exams.some((score) => score > 95);
 
-// reduce method
+// reduce method - executes a reducer function on each element of array, resulting in a single value
+
+// Summing an array
+[3, 5, 7, 9, 11].reduce((accumulator, currentValue) => {
+  return accumulator + currentValue;
+});
+
+// Sum prices
+const prices = [9.99, 4.99, 1.5];
+const total = prices.reduce((accumulator, price) => accumulator + price);
+
+// Minimum in array
+const min = prices.reduce((min, price) => {
+  if (price < min) {
+    return price;
+  } else {
+    return min;
+  }
+});
+
+// movies
+movies.reduce((bestMovie, movie) => {
+  if (movie.score > bestMovie.score) {
+    return movie;
+  } else {
+    return bestMovie;
+  }
+});
+
+// Second argument for reduce acts as initial value for accumulator
+const evens = [2, 4, 6, 8];
+evens.reduce((sum, num) => num + num, 100);
+
+// settimeout function will not work as it is a method on the window!
+// Instead, declare functions with arrow method
+// Generally better to use arrow functions for methods
+const person = {
+  firstName: "Viggo",
+  lastName = "Mortenson",
+  fullName: function () {
+    return `${this.firstName} ${this.lastName}`
+  },
+  shoutName: function() {
+    setTimeout(() => console.log(this.fullName), 3000)
+  }
+};
+
+// Arrow functions and 'this'
+const person = {
+  firstName: "Viggo",
+  lastName = "Mortenson",
+  fullName: () => `${this.firstName} ${this.lastName}`,
+  shoutName: () => {
+    setTimeout(() => console.log(this.fullName), 3000)
+  }
+};
