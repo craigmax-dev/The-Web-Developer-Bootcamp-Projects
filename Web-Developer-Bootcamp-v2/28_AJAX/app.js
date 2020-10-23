@@ -50,4 +50,68 @@ const fetchBitcoinPrice = async () => {
   }
 };
 
-// axios - library for making http requests
+// axios - library for making http requests - can use in both node.js and server side
+axios
+  .get("https://api.cryptonator.com/api/ticker/btc-usd")
+  .then((res) => {
+    console.log(res.data.ticker.price);
+  })
+  .catch((err) => {
+    console.log("ERROR!", err);
+  });
+
+// same function with axios
+const getBitcoinPrice_axios = async () => {
+  try {
+    const res = await axios.get(
+      "https://api.cryptonator.com/api/ticker/btc-usd"
+    );
+    console.log(res.data.ticker.price);
+  } catch (e) {
+    console.log("ERROR!", e);
+  }
+};
+
+const button = document.querySelector("#btn_dadJoke");
+
+const jokes = document.querySelector("#ul_dadJoke");
+
+const addNewJoke = async () => {
+  const jokeText = await getDadJoke();
+  const newLI = document.createElement("LI");
+  newLI.append(jokeText);
+  jokes.append(newLI);
+};
+
+const getDadJoke = async () => {
+  try {
+    const config = { headers: { Accept: "application/json" } };
+    const res = await axios.get("https://icanhazdadjoke.com/", config);
+    return res.data.joke;
+  } catch (e) {
+    return "NO JOKES AVAILABLE! SORRY :(";
+  }
+};
+
+button.addEventListener("click", addNewJoke);
+
+// TV show search app
+const form = document.querySelector("#searchForm");
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const searchQuery = form.elements.query.value;
+  const config = { params: { q: searchQuery }, headers: {} };
+  const res = await axios.get(`http://api.tvmaze.com/search/shows`, config);
+  showImages(res.data);
+  form.elements.query.value = "";
+});
+
+const showImages = (shows) => {
+  for (let result of shows) {
+    if (result.show.image) {
+      const img = document.createElement("IMG");
+      img.src = result.show.image.medium;
+      document.body.append(img);
+    }
+  }
+};
