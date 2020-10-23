@@ -4,9 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <!-- Libraries -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
   <body>
     <h1>AJAX</h1>
+
+    <section id="sec_dadJoke">
+      <h2>Click to get new joke!</h2>
+      <button id="btn_dadJoke">Click me!</button>
+      <ul id="ul_dadJoke"></ul>
+    </section>
+
+    <section id="sec_tvShowSearch">
+      <h2>TV Show Search</h2>
+      <form action="" id="searchForm">
+        <input type="text" placeholder="your search query" name="query" />
+        <button>search</button>
+      </form>
+    </section>
+
     <script src="app.js"></script>
   </body>
 </html>
