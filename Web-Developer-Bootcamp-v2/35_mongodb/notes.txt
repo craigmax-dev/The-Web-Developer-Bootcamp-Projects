@@ -1,0 +1,24 @@
+
+
+OPERATORS
+
+db.dogs.find({"personality.childFriendly": true, age: 10})
+
+Greater than operator:
+db.dogs.find({age: {$gt: 8}})
+
+Greater than or equal:
+db.dogs.find({age: {$gte: 8}})
+
+Less than:
+db.dogs.find({age: {$lt: 8}})
+
+In operator:
+db.dogs.find({breed: {$in: ["Mutt", "Corgi"]}, age: {$lt: 10}})
+
+Not in operator: $nin
+
+$and
+$or
+db.dogs.find({$or: [{"personality.catFriendly": true}, {age: {$lte: 2}}]})
+$not
