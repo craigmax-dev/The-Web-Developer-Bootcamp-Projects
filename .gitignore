@@ -40,6 +40,7 @@ build/Release
 # Dependency directories
 node_modules/
 jspm_packages/
+/Web-Developer-Bootcamp-v2/37_mongoose
 */node_modules
 */*/node_modules
 */*/*/node_modules
